@@ -9,7 +9,7 @@ clickable ↑
 ### 🔨 Guia de instalação
 
 ```
-git clone https://github.com/yanxxavier/GreenGardens-Front.git
+git clone https://github.com/JooaoFonseca/GreenGardens-Front.git
 ```
 
 ## 📦 Tecnologias usadas:
