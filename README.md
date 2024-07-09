@@ -27,11 +27,12 @@ git clone https://github.com/yanxxavier/GreenGardens-Front.git
   
 ## 👷 Autores
 
-* **Yan Xavier** - *Frontend* - [@yanxxavier](https://github.com/yanxxavier)
+* **João Matheus** - *Backend* - [@JooaoFonseca](https://github.com/yanxxavier)
 * **Beatriz** - *UI/UX* - [@beatriz](https://br.linkedin.com/in/beatriz-xavier-339232287)
 
 
 ## ⚙ Suporte
 
-* Para suporte, mande um email para yanxavierlindolfo@gmail.com
-* Meu linkedin [Meu linkedin](https://www.linkedin.com/feed/)
+* Para suporte frontend, mande um email para yanxavierlindolfo@gmail.com
+* Para suporte backend, mande um email para sfojoao.matheus04@gmail.com
+* Meu linkedin [Meu linkedin](https://www.linkedin.com/in/jo%C3%A3o-matheus-07b022202/)
