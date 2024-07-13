@@ -13,6 +13,8 @@ import os.path
 import sys
 from pathlib import Path
 from dotenv import load_dotenv
+from decouple import config
+
 
 load_dotenv()
 
@@ -42,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'servicos',
+    'contato',
 ]
 
 MIDDLEWARE = [
@@ -132,6 +135,20 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 PROJECT_ROOT = os.path.dirname(__file__)
 sys.path.insert(0, os.path.join(PROJECT_ROOT, '../apps'))
+
+DEFAULT_FROM_EMAIL = "sfojoao.matheus04@gmail.com"
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+EMAIL_USE_TLS = config('EMAIL_USE_TLS')
+EMAIL_PORT = config('EMAIL_PORT')
+EMAIL_HOST = config('EMAIL_HOST')
+
+from django.contrib.messages import constants as messages
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger',
+    messages.SUCCESS: 'success',
+}
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
