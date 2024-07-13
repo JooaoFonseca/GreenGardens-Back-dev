@@ -1,6 +1,6 @@
 from django.urls import path
-from servicos.views import index
+from . import views
 
 urlpatterns = [
-    path('', index)
+    path('', views.index, name='index')
 ]

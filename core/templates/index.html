@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,8 +10,8 @@
     <link rel="preload" href={% static 'img/slider/slider-img1.jpeg'%} as="image">
 
     <link rel="stylesheet" href={% static 'css/style.css'%}>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href='https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css'/>
+    <link rel="stylesheet" type="text/css" href='https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css'>
     <title>Green Gardens</title>
 </head>
 <body>
@@ -60,27 +60,26 @@
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
                   <!-- Slides -->
+                    {% for object in obj %}
+                    {% if forloop.counter != 1 %}
                     <div class="swiper-slide">
-                        <div class="overlay"></div>
-                        <img src={% static 'img/slider/slider-img1.webp'%} alt="Quintal de plantas">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src={% static 'img/slider/slider-img2.webp'%} alt="Parque" loading="lazy">
+                        <img src={{ object.imagem.url }} alt="Quintal de plantas" loading="lazy">
                         <div class="overlay"></div>
                     </div>
+                    {% else %}
                     <div class="swiper-slide">
-                        <img src={% static 'img/slider/slider-img3.webp'%} alt="Restaurante" loading="lazy">
                         <div class="overlay"></div>
+                        <img src={{ object.imagem.url }} alt="Restaurante" loading="lazy">
                     </div>
-                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
                 <!-- If we need pagination -->
                 <div class="swiper-pagination"></div>
-              
                 <!-- If we need navigation buttons -->
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
-              
-              </div>
+            </div>
         </section>
 
         <!--Seção home-->
@@ -472,8 +471,8 @@
         </div>
     </section>
     
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js" defer></script>  <!--Link lib alertas-->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>   <!--Link lib slider-->
-    <script type="module" src="core/js/main.js"></script>
+    <script type="text/javascript" src='https://cdn.jsdelivr.net/npm/toastify-js' defer></script>  <!--Link lib alertas-->
+    <script src='https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js'></script>   <!--Link lib slider-->
+    <script type="module" src={% static 'js/main.js'%}></script>
 </body>
 </html>
